@@ -10,9 +10,9 @@ import Foundation
 
 class AuthController {
     
-    // MARK: - Variables
-    private let baseUrl = URL(string: "https://lambdagigs.vapor.cloud/api")!
-    private var bearer: Bearer?
+    // MARK: - Attributes
+    let baseUrl = URL(string: "https://lambdagigs.vapor.cloud/api")!
+    var bearer: Bearer?
     var isLoggedIn: Bool { if bearer == nil { return false } else { return true } }
     
     // MARK: - Base Functions
@@ -59,4 +59,12 @@ class AuthController {
             completion(nil)
         }.resume()
     }
+}
+
+enum NetworkError: Error {
+    case noAuth
+    case badAuth
+    case otherError
+    case badData
+    case noDecode
 }

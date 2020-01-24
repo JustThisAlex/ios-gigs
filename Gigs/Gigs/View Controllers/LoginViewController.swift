@@ -10,17 +10,17 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    // MARK: - Outlets
+    // MARK: - IBOutlets
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var segment: UISegmentedControl!
     @IBOutlet weak var button: UIButton!
     
-    // MARK: - Variables
+    // MARK: - Attributes
     var gigController: GigController?
     var login = false
     
-    // MARK: - Lifecycle
+    // MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         format()
